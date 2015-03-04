@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans          
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+		   http://www.springframework.org/schema/context/spring-context.xsd
+		   http://www.springframework.org/schema/mvc 
+       	   http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       	   http://www.springframework.org/schema/cache
+       	   http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+	<!-- Diz ao Spring que ele deve usar a configuração das annotations -->
+	<mvc:annotation-driven />
+	
+	<!-- Informa o pacote onde o Spring ira buscar as classes anotadas (@Controller, @Service...)  -->
+	<context:component-scan base-package="npi.contatos.controller" />
+	
+	<!-- Define pagina inicial (ingnora a configuração do web.xml)-->
+	<mvc:view-controller path="/contato/listar"/>
+	
+	<!-- Define onde está localizada as views da aplicação, e qual a extenção das mesmas -->
+	<!-- Estão configuradas dentro da WEB-INF para que o usuário não possa acessalas, se não por meio do mapeamento-->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/view/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
+	<!-- define o mapeamento dos recursos, como css, js, imagens, etc -->
+	<mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/" />
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+
+</beans>
