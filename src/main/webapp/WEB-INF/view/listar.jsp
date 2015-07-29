@@ -9,9 +9,17 @@
 <body>
 	<h2>Contatos</h2>
 	<c:forEach items="${contatos}" var="contato">
-		<label>Nome: ${contato.nome } <p>Teste</p></label> |
+		<label>Nome: ${contato.nome }</label> | 
+		<label>Email: ${contato.email }</label> | 
+
+		<c:if test="${action eq 'cadastrar' }">
+			<c:set var="url" value="/adicionar"></c:set>
+			<c:set var="titulo" value="Novo Contato"></c:set>
+			<c:set var="botao" value="Adicionar"></c:set>
+		</c:if>
+
+		<label>Telefone: ${contato.telefone }</label>
 		<a href="/contatos/remover/${contato.id }">remover</a><br>
-		<a href="/contatos/editar/${contato.id }">editar</a><br>
 	</c:forEach>
 	<a href="/contatos/adicionar">Adicionar</a>
 </body>
