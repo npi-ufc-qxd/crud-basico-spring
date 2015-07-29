@@ -9,7 +9,6 @@
 		   http://www.springframework.org/schema/tx
 		   http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-
 	<context:annotation-config />
 	<context:component-scan base-package="npi.contatos.respository" />
 	<context:component-scan base-package="npi.contatos.service" />
@@ -18,6 +17,7 @@
 	<bean id="contatos" class="org.springframework.jndi.JndiObjectFactoryBean">
 		<property name="jndiName" value="java:comp/env/contatos" />
 	</bean>
+	
 	<bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="persistenceUnitName" value="dev" />
 		<property name="dataSource" ref="contatos" />

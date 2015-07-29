@@ -31,4 +31,14 @@ public class ContatoServiceImpl implements ContatoService {
 		contatoRepository.remover(contato);
 	}
 
+	@Override
+	public Contato getContatoById(Integer id) {
+		return contatoRepository.findById(id);
+	}
+
+	@Override
+	public void editar(Contato contato) {
+		contatoRepository.editar(contato);
+	}
+
 }
