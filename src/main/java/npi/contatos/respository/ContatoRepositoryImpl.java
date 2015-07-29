@@ -45,4 +45,11 @@ public class ContatoRepositoryImpl implements ContatoRepository {
 		
 	}
 
+	@Override
+	@Transactional
+	public void editar(Contato contato) {
+		em.merge(contato);
+	}
+
+
 }

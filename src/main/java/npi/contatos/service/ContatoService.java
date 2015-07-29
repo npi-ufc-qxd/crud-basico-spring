@@ -12,4 +12,7 @@ public interface ContatoService {
 	
 	void remover(Integer id);
 
+	Contato getContatoById(Integer id);
+	
+	void editar(Contato contato);
 }
