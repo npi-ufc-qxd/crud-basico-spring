@@ -9,9 +9,7 @@
 <body>
 	<h2>Contatos</h2>
 	<c:forEach items="${contatos}" var="contato">
-		<label>Nome: ${contato.nome }</label> |
-		 
-		 <p>>Teste</p>
+		<label>Nome: ${contato.nome } <p>Teste</p></label> |
 		<a href="/contatos/remover/${contato.id }">remover</a><br>
 		<a href="/contatos/editar/${contato.id }">editar</a><br>
 	</c:forEach>
