@@ -41,7 +41,7 @@
 		<hibernate.validator.version>5.1.0.Final</hibernate.validator.version>
 
 		<!-- Database access -->
-		<postgresql.version>9.1-901.jdbc4</postgresql.version>
+		<postgresql.version>9.4-1204-jdbc42</postgresql.version>
 
 		<!-- Spring Security -->
 		<spring.security.version>3.2.1.RELEASE</spring.security.version>
@@ -146,7 +146,7 @@
 
 		<!-- Databases - Uses POSTGRESQL by default -->
 		<dependency>
-			<groupId>postgresql</groupId>
+			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>${postgresql.version}</version>
 		</dependency>

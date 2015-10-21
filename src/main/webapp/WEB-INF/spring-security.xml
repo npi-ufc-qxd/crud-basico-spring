@@ -11,7 +11,7 @@
 	<http auto-config="true" access-denied-page="/login?erro=403">
  		<intercept-url pattern="/login*" access="IS_AUTHENTICATED_ANONYMOUSLY" /> 
  		<intercept-url pattern="/webjars/**" access="IS_AUTHENTICATED_ANONYMOUSLY" /> 		
- 		<intercept-url pattern="/**" access="ROLE_CONTATO" />
+ 		<intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
  		
  		<form-login login-page="/login" default-target-url="/" authentication-failure-url="/login?erro=403" />
  		<logout logout-success-url="/login" invalidate-session="true"/> 	
